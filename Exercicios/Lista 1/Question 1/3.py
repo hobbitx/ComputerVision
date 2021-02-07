@@ -28,7 +28,7 @@ def calcule_deviation(img,variance = -1):
         variance = calcule_variance(img)
     return round(math.sqrt(variance),4)
 
-img = cv.imread("./imgs/image.png")
+img = cv.imread("./image.png")
 overlay = img.copy()
 output = img.copy()
 size = 0.6
@@ -60,7 +60,6 @@ def click_event(event, x, y, flags, param):
     cv.putText(info, img_std, (5,95), font, size, (255,255,255), 2)
     cv.addWeighted(overlay, 1.0, output, 0,0,output)
     cv.imshow("image", output)
-  
     cv.imshow('window',info)
 
 cv.imshow("image", img)
